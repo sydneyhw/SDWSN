@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- 让IE8、IE9浏览器运行在最新的渲染模式下 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,,chrome=1">
+
+<meta name="keywords" content="adhoc">
+<meta name="description" content="仿知乎的导航条和登录页，并用jQuery validation plugin进行了前端表单验证">
+<!-- viewport元数据标签，width属性控制视口的宽度。可以像width=600这样设为确切的像素数，或者设为device-width这一特殊值来指代比例为100%时屏幕宽度的CSS像素数值。（相应有height及device-height属性，可能对包含基于视口高度调整大小及位置的元素的页面有用。）
+initial-scale属性控制页面最初加载时的缩放等级。maximum-scale、minimum-scale及user-scalable属性控制允许用户以怎样的方式放大或缩小页面。 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>LOGIN</title>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+  <div class="jumbotron">
+    <div class="container-fluid">
+      <h1 class="text-center" style="color:#29A176;">SDWSN</h1>
+    </div>
+  </div>
+  <!-- Nav tabs -->
+  <div class="container">
+    <ul class="nav nav-tabs" role="tablist">
+      
+      <li role="presentation" class="active"><a href="http://demo-bootstrap-blog.herokuapp.com/#signin" role="tab" data-toggle="tab" aria-expanded="false" style="color: #29A176;" id="tab_login">登录</a></li>
+      <li role="presentation"  class=""><a href="http://demo-bootstrap-blog.herokuapp.com/#register" role="tab" data-toggle="tab" aria-expanded="true" style="color: #000000;" id="tab_register">注册</a></li>
+    </ul>
+    <div class="tab-content">
+    
+      <div role="tabpanel1" class="tab-pane fade " id="register">
+        <form id="reg" class="form-signin" role="form" method="post" action="http://demo-bootstrap-blog.herokuapp.com/reg" novalidate="novalidate">
+          <div class="form-group has-feedback">
+            <label class="control-label sr-only" for="inputSuccess1">Hidden label</label>
+            <input id="inputSuccess1" type="text" name="name" class="form-control" style="border-color:#29A176;" placeholder="用户名" required="" autofocus="" aria-required="true">
+          </div>
+          <div class="form-group has-feedback">
+            <label class="control-label sr-only" for="regpassword">Hidden label</label>
+            <input id="regpassword" name="password" type="password" class="form-control" style="border-color:#29A176;" placeholder="密码" required="" aria-required="true">  
+          </div>
+          <div class="form-group has-feedback">
+            <label class="control-label sr-only" for="regpasswordagain">Hidden label</label>
+            <input id="regpasswordagain" name="password-repeat" type="password" class="form-control" style="border-color:#29A176;" placeholder="确认密码" required="" aria-required="true">  
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #29A176;border-color: #29A176;">注册</button>
+        </form>
+      </div>
+      
+      	<div role="tabpane1" class="tab-pane fade active in" id="signin">
+        <form id="login" class="form-signin" role="form" method="post" action="http://demo-bootstrap-blog.herokuapp.com/login" novalidate="novalidate">
+          <div class="form-group has-feedback">
+            <label class="control-label sr-only" for="inputSuccess3">Hidden label</label>
+            <input id="inputSuccess3" type="text" name="name" class="form-control" style="border-color:#29A176;" placeholder="用户名" required="" autofocus="" aria-required="true">
+          </div>
+          <div class="form-group has-feedback">
+            <label class="control-label sr-only" for="loginpassword">Hidden label</label>
+            <input id="loginpassword" name="password" type="password" class="form-control" style="border-color:#29A176;" placeholder="密码" required="" aria-required="true">
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #29A176;border-color: #29A176;">登录</button>
+        </form>
+      </div>
+      
+    </div>        
+  </div><!-- container -->
+<footer class="blog-footer">
+  <p style="color:#29A176;">SDWSN SYSTEM
+  </p>
+</footer>
+<canvas id="canvas"></canvas>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery.validate.min.js.下载"></script>
+<script src="./js/login.js"></script>
+<script src="./js/particles.js"></script>
+</body>
+</html>

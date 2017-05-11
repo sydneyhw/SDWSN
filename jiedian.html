@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>ADHOC</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+	  <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body{
+        font-family: 'Microsoft YaHei';
+        font-size: 20px;
+        color: #345;
+      }
+
+      circle{
+        cursor: pointer;
+      }
+      .normalNode{
+        fill:#1E90FF;
+        stroke:#1E90FF;
+        stroke-width:3;
+      }
+      .iNode{
+        fill:red;
+        stroke:red;
+        stroke-width:3
+      }
+      .overlay {
+      fill: none;
+      pointer-events: all;
+      }
+
+
+
+  </style>
+  </head>
+  <body class="container-fluid">	
+  <script src="js/d3.js"></script>
+  <script src='js/topology.js'></script> 
+  <script>
+		function IsPC()  
+		{  
+           var userAgentInfo = navigator.userAgent;  
+           var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+           var flag = true;  
+           for (var v = 0; v < Agents.length; v++) {  
+               if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+           }  
+           return flag;  
+		} 
+		 
+  </script>
+  </body>
+</html>
