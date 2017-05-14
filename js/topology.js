@@ -191,7 +191,7 @@
 
  }
  var width = $(window).width(),
- 	height = 1000;
+ 	height = 800;
  // d3.json("force.php", function(error, graph) {})
  var force = d3.layout.force()
  	.nodes(d3.values(nodes))
@@ -201,7 +201,6 @@
  	.linkDistance(300)
  	.charge(-400)
  	.on("tick", tick)
- 	.force("center", d3.forceCenter(width / 2, 400))
  	.start();
 
  var svg = d3.select("body").append("svg")
@@ -224,7 +223,8 @@
  var link = container.selectAll(".link")
  	.data(force.links())
  	.enter().append("line")
- 	.attr("class", "link");
+ 	.attr("class", "link")
+ 	.call(zoom);
 
  link.style("stroke", function(d) {
  	return d.color

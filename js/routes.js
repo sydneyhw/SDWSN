@@ -2,7 +2,7 @@
  * @Author: Sydney
  * @Date:   2017-05-08 13:03:25
  * @Last Modified by:   Sydney
- * @Last Modified time: 2017-05-10 00:08:56
+ * @Last Modified time: 2017-05-14 21:54:57
  */
 // var svgns = "http://www.w3.org/2000/svg";
 // $.svg = function $svg(tagName) {
@@ -91,8 +91,29 @@ var route = {
 	18: '15',
 	19: '0'
 };
-var topo = [["0","5","8","9","8","8","8","9","9","9","9","10","8","8","9","9","9","9","10","8"],["5","0","6","10","10","10","10","10","10","10","10","10","9","9","10","9","10","9","10","10"],["8","6","0","9","9","10","9","10","9","10","9","10","9","10","9","9","10","10","10","9"],["9","10","9","0","10","10","10","10","10","10","10","10","10","10","10","10","10","10","10","10"],["8","10","9","10","0","10","10","10","10","10","10","10","9","10","10","10","9","10","10","10"],["8","10","10","10","10","0","9","10","10","10","10","10","10","10","9","10","10","10","10","10"],["8","10","9","10","10","9","0","10","10","10","10","10","10","10","10","9","10","10","10","10"],["9","10","10","10","10","10","10","0","10","9","10","10","10","10","10","10","10","10","10","10"],["9","10","9","10","10","10","10","10","0","10","10","10","10","10","10","10","10","10","10","10"],["9","10","10","10","10","10","10","9","10","0","10","10","9","10","10","9","10","10","10","10"],["9","10","9","10","10","10","10","10","10","10","0","10","10","10","10","10","10","10","10","10"],["10","10","10","10","10","10","10","10","10","10","10","0","9","10","10","10","10","10","10","10"],["8","9","9","10","9","10","10","10","10","9","10","9","0","9","9","10","10","9","10","9"],["8","9","10","10","10","10","10","10","10","10","10","10","9","0","9","9","10","10","10","9"],["9","10","9","10","10","9","10","10","10","10","10","10","9","9","0","10","10","10","10","10"],["9","9","9","10","10","10","9","10","10","9","10","10","10","9","10","0","10","9","10","10"],["9","10","10","10","9","10","10","10","10","10","10","10","10","10","10","10","0","10","10","10"],["9","9","10","10","10","10","10","10","10","10","10","10","9","10","10","9","10","0","10","10"],["10","10","10","10","10","10","10","10","10","10","10","10","10","10","10","10","10","10","0","10"],["8","10","9","10","10","10","10","10","10","10","10","10","9","9","10","10","10","10","10","0"]];
- 
+var topo = [
+	["0", "5", "8", "9", "8", "8", "8", "9", "9", "9", "9", "10", "8", "8", "9", "9", "9", "9", "10", "8"],
+	["5", "0", "6", "10", "10", "10", "10", "10", "10", "10", "10", "10", "9", "9", "10", "9", "10", "9", "10", "10"],
+	["8", "6", "0", "9", "9", "10", "9", "10", "9", "10", "9", "10", "9", "10", "9", "9", "10", "10", "10", "9"],
+	["9", "10", "9", "0", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10"],
+	["8", "10", "9", "10", "0", "10", "10", "10", "10", "10", "10", "10", "9", "10", "10", "10", "9", "10", "10", "10"],
+	["8", "10", "10", "10", "10", "0", "9", "10", "10", "10", "10", "10", "10", "10", "9", "10", "10", "10", "10", "10"],
+	["8", "10", "9", "10", "10", "9", "0", "10", "10", "10", "10", "10", "10", "10", "10", "9", "10", "10", "10", "10"],
+	["9", "10", "10", "10", "10", "10", "10", "0", "10", "9", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10"],
+	["9", "10", "9", "10", "10", "10", "10", "10", "0", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10"],
+	["9", "10", "10", "10", "10", "10", "10", "9", "10", "0", "10", "10", "9", "10", "10", "9", "10", "10", "10", "10"],
+	["9", "10", "9", "10", "10", "10", "10", "10", "10", "10", "0", "10", "10", "10", "10", "10", "10", "10", "10", "10"],
+	["10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "0", "9", "10", "10", "10", "10", "10", "10", "10"],
+	["8", "9", "9", "10", "9", "10", "10", "10", "10", "9", "10", "9", "0", "9", "9", "10", "10", "9", "10", "9"],
+	["8", "9", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "9", "0", "9", "9", "10", "10", "10", "9"],
+	["9", "10", "9", "10", "10", "9", "10", "10", "10", "10", "10", "10", "9", "9", "0", "10", "10", "10", "10", "10"],
+	["9", "9", "9", "10", "10", "10", "9", "10", "10", "9", "10", "10", "10", "9", "10", "0", "10", "9", "10", "10"],
+	["9", "10", "10", "10", "9", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "0", "10", "10", "10"],
+	["9", "9", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "9", "10", "10", "9", "10", "0", "10", "10"],
+	["10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "10", "0", "10"],
+	["8", "10", "9", "10", "10", "10", "10", "10", "10", "10", "10", "10", "9", "9", "10", "10", "10", "10", "10", "0"]
+];
+
 // function ink() {
 // 	$.ajax({
 // 		type: "get",
@@ -139,44 +160,44 @@ function generateRoutes(obj) {
 				}
 			}
 			for (var i = 0; i < topo.length; i++) {
- 		    for (var j = 0; j < topo[i].length; j++) {
- 			if(i==index&&val==j){
- 				topo[i][j]=parseInt(topo[i][j]);
- 				switch (topo[i][j]) {
- 					case 10:
- 						routeArr[n].color = '#00CD00';
- 						
- 						break;
- 					case 9:
- 						routeArr[n].color = '#00CD00';
- 						
- 						break;
- 					case 8:
- 						routeArr[n].color = '#FFD700'; 						
- 						break;
- 					case 7:
- 						routeArr[n].color = '#FFD700';
- 						
- 						break;
- 					case 6:
- 						routeArr[n].color = '#FF0000';
- 						
- 						break;
- 					case 5:
- 						routeArr[n].color = '#FF0000'; 						
- 						break;
- 					default:
- 						break;
- 				}
- 				break;
- 			} 			 			
- 		}
- 	}
+				for (var j = 0; j < topo[i].length; j++) {
+					if (i == index && val == j) {
+						topo[i][j] = parseInt(topo[i][j]);
+						switch (topo[i][j]) {
+							case 10:
+								routeArr[n].color = '#00CD00';
+
+								break;
+							case 9:
+								routeArr[n].color = '#00CD00';
+
+								break;
+							case 8:
+								routeArr[n].color = '#FFD700';
+								break;
+							case 7:
+								routeArr[n].color = '#FFD700';
+
+								break;
+							case 6:
+								routeArr[n].color = '#FF0000';
+
+								break;
+							case 5:
+								routeArr[n].color = '#FF0000';
+								break;
+							default:
+								break;
+						}
+						break;
+					}
+				}
+			}
 
 			n++;
 		}
 	});
-	
+
 
 
 	return routeArr;
@@ -195,99 +216,129 @@ function nodeType(nodes, controlId) {
 	});
 	return nodes;
 }
- var width = $(window).width() ,
- 	height = 1000;
- // d3.json("force.php", function(error, graph) {})
- var force = d3.layout.force()
- 	.nodes(d3.values(nodes))
- 	.links(links)
- 	.size([width, height])
- 	// .linkDistance(function(d){return d.length;})
- 	.linkDistance(100)
- 	.charge(-400)
- 	.on("tick", tick)
- 	.start();
+var width = $(window).width(),
+	height = 800;
+// d3.json("force.php", function(error, graph) {})
+var force = d3.layout.force()
+	.nodes(d3.values(nodes))
+	.links(links)
+	.size([width, height])
+	// .linkDistance(function(d){return d.length;})
+	.linkDistance(100)
+	.charge(-400)
+	.on("tick", tick)
+	.start();
 
- var svg = d3.select("body").append("svg")
- 	.attr("width", width)
- 	.attr("height", height);
- 
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height);
+var defs = svg.append("defs");
 
- var zoom = d3.behavior.zoom()
- .center([width / 2, height / 2])  
-            .scaleExtent([-1, 10])  
-            .on("zoom", zoomed)
-            ;
- svg.append('rect')
-.attr('class','overlay')
-.attr('x',0)
-.attr('y', 0)
-.attr('width',width)
-.attr('height',height)
-.call(zoom);  
+var arrowMarker = defs.append("marker")
+	.attr("id", "arrow")
+	.attr("markerUnits", "strokeWidth")
+	.attr("markerWidth", "20")
+	.attr("markerHeight", "20")
+	.attr("viewBox", "0 0 12 12")
+	.attr("refX", "6")
+	.attr("refY", "6")
+	.attr("orient", "auto");
+
+var arrow_path = "M2,2 L10,6 L2,10 L6,6 L2,2";
+
+arrowMarker.append("path")
+	.attr("d", arrow_path)
+	.attr("fill", "#000");
+
+var zoom = d3.behavior.zoom()
+	.center([width / 2, height / 2])
+	.scaleExtent([-1, 10])
+	.on("zoom", zoomed);
+svg.append('rect')
+	.attr('class', 'overlay')
+	.attr('x', 0)
+	.attr('y', 0)
+	.attr('width', width)
+	.attr('height', height)
+	.call(zoom);
 var container = svg.append("g");
- var link = container.selectAll(".link")
- 	.data(force.links())
- 	.enter().append("line")
- 	.attr("class", "link");
+var link = container.selectAll(".link")
+	.data(force.links())
+	.enter().append("line")
+	.attr("class", "link")
+	.attr("marker-end", "url(#arrow)");
 
- link.style("stroke", function(d) {
- 	return d.color
- });
+link.style("stroke", function(d) {
+	return d.color
+});
 
-
- var nodeAll = container.selectAll(".node")
- 	.data(force.nodes())
- 	.enter().append("g")
- 	.attr("class", "node")
- 	.call(force.drag);
-
-
- nodeAll.append("circle")
- 	.attr("r", 14)
- 	.attr("class", function(d) {
- 		if (d.type) {
- 			return 'normalNode node';
- 		} else {
- 			return 'iNode node';
- 		};
- 	});
-
- nodeAll.append("text")
- 	.attr("x", -10)
- 	.attr("dy", ".35em")
- 	.text(function(d) {
- 		return d.id;
- 	});
- 	 
+var nodeAll = container.selectAll(".node")
+	.data(force.nodes())
+	.enter().append("g")
+	.attr("class", "node")
+	.call(force.drag);
 
 
+nodeAll.append("circle")
+	.attr("r", 14)
+	.attr("class", function(d) {
+		if (d.type) {
+			return 'normalNode node';
+		} else {
+			return 'iNode node';
+		};
+	});
 
- function tick() {
- 	link
- 		.attr("x1", function(d) {
- 			return d.source.x;
- 		})
- 		.attr("y1", function(d) {
- 			return d.source.y;
- 		})
- 		.attr("x2", function(d) {
- 			return d.target.x;
- 		})
- 		.attr("y2", function(d) {
- 			return d.target.y;
- 		});
-
- 	nodeAll
- 		.attr("transform", function(d) {
- 			return "translate(" + d.x + "," + d.y + ")";
- 		});
- }
-
-function zoomed() {  
-    
-
-    container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+nodeAll.append("text")
+	.attr("x", -10)
+	.attr("dy", ".35em")
+	.text(function(d) {
+		return d.id;
+	});
 
 
-}  
+
+function tick() {
+	link
+		.attr("x1", function(d) {
+			return d.source.x;
+		})
+		.attr("y1", function(d) {
+			return d.source.y;
+		})
+		.attr("x2", function(d) {
+			var deltaX = d.target.x - d.source.x,
+				deltaY = d.target.y - d.source.y,
+				dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY),
+				normX = deltaX / dist,
+				normY = deltaY / dist,
+				targetPadding = 22,
+				targetX = d.target.x - (targetPadding * normX),
+				targetY = d.target.y - (targetPadding * normY);
+			return targetX;
+		})
+		.attr("y2", function(d) {
+			var deltaX = d.target.x - d.source.x,
+				deltaY = d.target.y - d.source.y,
+				dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY),
+				normX = deltaX / dist,
+				normY = deltaY / dist,
+				targetPadding = 22,
+				targetX = d.target.x - (targetPadding * normX),
+				targetY = d.target.y - (targetPadding * normY);
+			return targetY;
+		});
+
+	nodeAll
+		.attr("transform", function(d) {
+			return "translate(" + d.x + "," + d.y + ")";
+		});
+}
+
+function zoomed() {
+
+
+	container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+
+
+}
