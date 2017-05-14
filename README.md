@@ -12,3 +12,15 @@ Canvas提供的功能更原始，适合像素处理，动态渲染和大数据�
 显示其他颜色：获取某一行的值，然后画线
 设置路由：将两个点push进数组，更新 route数组
 然后清空svg重绘？
+
+- ### 2017 5.11
+- [] 为路由图添加了箭头
+先写一对<defs>，里面再写一对<marker>，其中marker的属性意义为：
+viewBox：坐标系的区域
+refX, refY：在 viewBox 内的基准点，绘制时此点在直线端点上（要注意大小写）
+markerUnits：标识大小的基准，有两个值：strokeWidth（线的宽度）和userSpaceOnUse（图形最前端的大小）
+markerWidth, markerHeight：标识的大小
+orient：绘制方向，可设定为：auto（自动确认方向）和 角度值
+id：标识的id号
+然后在 marker 里绘制图形即可，可用 path 绘制了一个箭头的图形。
+http://www.tuicool.com/articles/Bzmemuy
